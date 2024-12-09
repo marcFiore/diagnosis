@@ -5,17 +5,18 @@ public class AutoDiagnosticSystem implements DiagnosticSystem {
     public String diagnose(int healthIndex) {
 
         if (healthIndex % 15 == 0) {
-            return "Cardiologie, Traumatologie";
+            return EnumDiagnosticTranscription.BOTH_PATOLOGIES.frenchTranslation;
         }
 
         if (healthIndex % 3 == 0) {
-            return "Cardiologie";
+            return EnumDiagnosticTranscription.CARDIOLOGY.frenchTranslation;
         }
 
         if (healthIndex % 5 == 0) {
-            return "Traumatologie";
+            return EnumDiagnosticTranscription.TRAUMATOLOGY.frenchTranslation;
         }
 
-        return "pas de pathologie";
+        return EnumDiagnosticTranscription.NO_PATHOLOGIE.frenchTranslation;
     }
+
 }
