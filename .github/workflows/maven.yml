@@ -34,13 +34,13 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: jacoco-report
-          path: target/site/jacoco/index.html
+          path: target/site/jacoco
 
       - name: Upload PITest report
         uses: actions/upload-artifact@v4
         with:
           name: pitest-report
-          path: target/pit-reports/index.html
+          path: target/pit-reports
 
       - name: Upload Cucumber report
         uses: actions/upload-artifact@v4
