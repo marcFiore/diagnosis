@@ -3,13 +3,14 @@ package unit;
 import com.softway.diagnosis.domain.service.AutoDiagnosticSystemService;
 import com.softway.diagnosis.domain.service.DiagnosticSystemService;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Tests unitaires permettant de vérifier le fonctionnement de l'outil de diagnostic {@link com.mfisoftware.diagnosis.domain.service.DiagnosticSystem}
+ * Tests unitaires permettant de vérifier le fonctionnement de l'outil de diagnostic {@link com.softway.diagnosis.domain.service.DiagnosticSystemService}
  */
 class DiagnosticSystemServiceTest {
     DiagnosticSystemService autoDiagnosticSystemService;
@@ -58,5 +59,4 @@ class DiagnosticSystemServiceTest {
         String diagnose = autoDiagnosticSystemService.diagnose(healthIndex);
         assertEquals("pas de pathologie", diagnose);
     }
-
 }
