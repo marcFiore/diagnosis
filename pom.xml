@@ -60,7 +60,23 @@
             <scope>test</scope>
         </dependency>
 
-        <!--si je décide de mettre spring sur le projet-->
+
+
+        <!-- mutation testing -->
+            <dependency>
+              <groupId>org.pitest</groupId>
+              <artifactId>pitest-parent</artifactId>
+              <version>1.17.2</version>
+              <type>pom</type>
+            </dependency>
+
+            <dependency>
+              <groupId>org.pitest</groupId>
+              <artifactId>pitest-junit5-plugin</artifactId>
+              <version>1.2.1</version>
+            </dependency>
+
+        <!--si je décide de mettre spring pour l'injection de dépendance -->
         <!--        <dependency>-->
         <!--            <groupId>io.cucumber</groupId>-->
         <!--            <artifactId>cucumber-spring</artifactId>-->
@@ -82,6 +98,44 @@
                         </configurationParameters>
                     </properties>
                 </configuration>
+            </plugin>
+
+            <!-- plugin pour exécuter des tests de mutations -->
+            <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <version>1.17.2</version>
+
+                <configuration>
+                    <!-- Classes à tester -->
+                    <targetClasses>
+                        <param>com.softway.diagnosis.domain.*</param>
+                    </targetClasses>
+
+                    <!-- Classes de test -->
+                    <targetTests>
+                        <param>unit.*Test</param>
+                    </targetTests>
+
+                    <!-- Seuil de détection des mutations -->
+                    <mutationThreshold>80</mutationThreshold>
+                    <coverageThreshold>80</coverageThreshold>
+
+                    <!-- Format de sortie -->
+                    <outputFormats>
+                        <format>HTML</format>
+                        <format>XML</format>
+                    </outputFormats>
+                </configuration>
+
+                <executions>
+                    <execution>
+                        <id>mutation-coverage</id>
+                        <goals>
+                            <goal>mutationCoverage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
             <!-- Plugin permettant d'afficher un rapport sur la couverture de test-->
