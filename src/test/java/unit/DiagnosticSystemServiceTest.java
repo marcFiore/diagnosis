@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Tests unitaires permettant de vérifier le fonctionnement de l'outil de diagnostic {@link com.mfisoftware.diagnosis.domain.service.DiagnosticSystem}
  */
-public class DiagnosticSystemServiceTest {
+class DiagnosticSystemServiceTest {
     DiagnosticSystemService autoDiagnosticSystemService;
 
     @BeforeEach
@@ -25,9 +25,9 @@ public class DiagnosticSystemServiceTest {
      */
     @ParameterizedTest
     @ValueSource(ints = {33, 3, 99})
-    public void shouldReturnHeartProblem(int healthIndex) {
+    void shouldReturnHeartProblem(int healthIndex) {
         String diagnose = autoDiagnosticSystemService.diagnose(healthIndex);
-        assertEquals(diagnose, "Cardiologie");
+        assertEquals("Cardiologie", diagnose);
     }
 
     /**
@@ -36,9 +36,9 @@ public class DiagnosticSystemServiceTest {
      */
     @ParameterizedTest
     @ValueSource(ints = {55, 25, 10, 5})
-    public void shouldReturnTraumatologyProblem(int healthIndex) {
+    void shouldReturnTraumatologyProblem(int healthIndex) {
         String diagnose = autoDiagnosticSystemService.diagnose(healthIndex);
-        assertEquals(diagnose, "Traumatologie");
+        assertEquals("Traumatologie", diagnose);
     }
 
     /**
@@ -47,16 +47,16 @@ public class DiagnosticSystemServiceTest {
      */
     @ParameterizedTest
     @ValueSource(ints = {15, 30, 45})
-    public void shouldReturnBothProblem(int healthIndex) {
+    void shouldReturnBothProblem(int healthIndex) {
         String diagnose = autoDiagnosticSystemService.diagnose(healthIndex);
-        assertEquals(diagnose, "Cardiologie, Traumatologie");
+        assertEquals("Cardiologie, Traumatologie", diagnose);
     }
 
     @ParameterizedTest
     @ValueSource(ints = {1, 2, 13, 28, 44})
-    public void shouldReturnNoProblem(int healthIndex) {
+    void shouldReturnNoProblem(int healthIndex) {
         String diagnose = autoDiagnosticSystemService.diagnose(healthIndex);
-        assertEquals(diagnose, "pas de pathologie");
+        assertEquals("pas de pathologie", diagnose);
     }
 
 }

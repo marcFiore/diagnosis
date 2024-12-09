@@ -15,5 +15,4 @@ public class AutoDiagnostic {
         String diagnose = diagnosticSystemService.diagnose(Integer.valueOf(args[0]));
         System.out.println(diagnose);
     }
-
 }

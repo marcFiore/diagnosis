@@ -9,9 +9,14 @@ public enum EnumDiagnosticTranscription {
 
     CARDIOLOGY("Cardiologie"), TRAUMATOLOGY("Traumatologie"), BOTH_PATOLOGIES("Cardiologie, Traumatologie"), NO_PATHOLOGIE("pas de pathologie");
 
-    public String frenchTranslation;
+    private String frenchTranslation;
 
     EnumDiagnosticTranscription(String frenchTranslation) {
         this.frenchTranslation = frenchTranslation;
+    }
+
+
+    public String getFrenchTranslation() {
+        return frenchTranslation;
     }
 }

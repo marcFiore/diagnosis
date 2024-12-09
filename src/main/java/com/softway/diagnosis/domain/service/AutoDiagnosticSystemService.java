@@ -7,18 +7,18 @@ public class AutoDiagnosticSystemService implements DiagnosticSystemService {
     public String diagnose(int healthIndex) {
 
         if (healthIndex % 15 == 0) {
-            return EnumDiagnosticTranscription.BOTH_PATOLOGIES.frenchTranslation;
+            return EnumDiagnosticTranscription.BOTH_PATOLOGIES.getFrenchTranslation();
         }
 
         if (healthIndex % 3 == 0) {
-            return EnumDiagnosticTranscription.CARDIOLOGY.frenchTranslation;
+            return EnumDiagnosticTranscription.CARDIOLOGY.getFrenchTranslation();
         }
 
         if (healthIndex % 5 == 0) {
-            return EnumDiagnosticTranscription.TRAUMATOLOGY.frenchTranslation;
+            return EnumDiagnosticTranscription.TRAUMATOLOGY.getFrenchTranslation();
         }
 
-        return EnumDiagnosticTranscription.NO_PATHOLOGIE.frenchTranslation;
+        return EnumDiagnosticTranscription.NO_PATHOLOGIE.getFrenchTranslation();
     }
 
 }
