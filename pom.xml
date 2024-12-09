@@ -84,7 +84,6 @@
                 </configuration>
             </plugin>
 
-
             <!-- Plugin permettant d'afficher un rapport sur la couverture de test-->
             <plugin>
                 <groupId>org.jacoco</groupId>
