@@ -15,6 +15,7 @@ public class AutoDiagnosticSystem implements DiagnosticSystem {
         if (healthIndex % 5 == 0) {
             return "Traumatologie";
         }
-        return null;
+
+        return "pas de pathologie";
     }
 }
