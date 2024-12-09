@@ -1,6 +1,6 @@
-package com.softway.diagnosis.domain;
+package com.softway.diagnosis.domain.service;
 
-public interface DiagnosticSystem {
+public interface DiagnosticSystemService {
 
     /**
      * Méthode permettant de définir, en fonction de l'indexe de santé du patient :

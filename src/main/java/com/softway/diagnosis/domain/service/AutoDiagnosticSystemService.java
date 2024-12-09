@@ -1,6 +1,8 @@
-package com.softway.diagnosis.domain;
+package com.softway.diagnosis.domain.service;
 
-public class AutoDiagnosticSystem implements DiagnosticSystem {
+import com.softway.diagnosis.domain.EnumDiagnosticTranscription;
+
+public class AutoDiagnosticSystemService implements DiagnosticSystemService {
     @Override
     public String diagnose(int healthIndex) {
 

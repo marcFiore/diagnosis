@@ -1,7 +1,7 @@
 package cucumber.steps;
 
-import com.softway.diagnosis.domain.AutoDiagnosticSystem;
-import com.softway.diagnosis.domain.DiagnosticSystem;
+import com.softway.diagnosis.domain.service.AutoDiagnosticSystemService;
+import com.softway.diagnosis.domain.service.DiagnosticSystemService;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Assertions;
  */
 public class DiagnosisStep {
 
-    DiagnosticSystem diagnosticSystem = new AutoDiagnosticSystem();
+    DiagnosticSystemService diagnosticSystemService = new AutoDiagnosticSystemService();
 
     int healthIindex;
 
@@ -30,22 +30,22 @@ public class DiagnosisStep {
 
     @When("the machine interprets the index as multiple of 3")
     public void the_machine_interprets_the_index_as_multiple_of_3() {
-        this.diagnose = diagnosticSystem.diagnose(healthIindex);
+        this.diagnose = diagnosticSystemService.diagnose(healthIindex);
     }
 
     @When("the machine interprets the index as multiple of 5")
     public void the_machine_interprets_the_index_as_multiple_of_5() {
-        this.diagnose = diagnosticSystem.diagnose(healthIindex);
+        this.diagnose = diagnosticSystemService.diagnose(healthIindex);
     }
 
     @When("the machine interprets the index as multiple of 3 and 5")
     public void the_machine_interprets_the_index_as_multiple_of_3_and_5() {
-        this.diagnose = diagnosticSystem.diagnose(healthIindex);
+        this.diagnose = diagnosticSystemService.diagnose(healthIindex);
     }
 
     @When("the machine interprets the index as not multiple of 3 and 5")
     public void theMachineInterpretsTheIndexAsNotMultipleOfAnd() {
-        this.diagnose = diagnosticSystem.diagnose(healthIindex);
+        this.diagnose = diagnosticSystemService.diagnose(healthIindex);
     }
 
     @Then("the screen should display {string}")
