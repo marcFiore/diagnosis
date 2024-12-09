@@ -12,7 +12,11 @@ public class AutoDiagnostic {
 
     public static void main(String[] args) {
         DiagnosticSystemService diagnosticSystemService = new AutoDiagnosticSystemService();
-        String diagnose = diagnosticSystemService.diagnose(Integer.valueOf(args[0]));
-        System.out.println(diagnose);
+        try {
+            String diagnose = diagnosticSystemService.diagnose(Integer.valueOf(args[0]));
+            System.out.println(diagnose);
+        } catch (NumberFormatException e) {
+            System.out.println("Erreur de paramètre. Le nombre donné est incorrect");
+        }
     }
 }
