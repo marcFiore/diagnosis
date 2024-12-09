@@ -30,5 +30,15 @@ public class DiagnosticSystemTest {
         assertEquals(diagnose, "Cardiologie");
     }
 
+    /**
+     * a traumatology problem should return Traumatologie
+     * @param healthIndex
+     */
+    @ParameterizedTest
+    @ValueSource(ints = {55, 25, 10, 5})
+    public void shouldReturnTraumatologyProblem(int healthIndex) {
+        String diagnose = autoDiagnosticSystem.diagnose(healthIndex);
+        assertEquals(diagnose, "Traumatologie");
+    }
 
 }
