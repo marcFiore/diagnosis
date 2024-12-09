@@ -6,6 +6,10 @@ public class AutoDiagnosticSystem implements DiagnosticSystem {
         if (healthIndex % 3 == 0) {
             return "Cardiologie";
         }
+
+        if (healthIndex % 5 == 0) {
+            return "Traumatologie";
+        }
         return null;
     }
 }
