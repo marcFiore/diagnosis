@@ -53,4 +53,11 @@ public class DiagnosticSystemTest {
         assertEquals(diagnose, "Cardiologie, Traumatologie");
     }
 
+    @ParameterizedTest
+    @ValueSource(ints = {1, 2, 13, 28, 44})
+    public void shouldReturnNoProblem(int healthIndex) {
+        String diagnose = autoDiagnosticSystem.diagnose(healthIndex);
+        assertEquals(diagnose, "pas de pathologie");
+    }
+
 }
