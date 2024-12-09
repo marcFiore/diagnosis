@@ -4,7 +4,7 @@ public class AutoDiagnosticSystem implements DiagnosticSystem {
     @Override
     public String diagnose(int healthIndex) {
 
-        if (healthIndex % 3 == 0 && healthIndex % 5 == 0) {
+        if (healthIndex % 15 == 0) {
             return "Cardiologie, Traumatologie";
         }
 
