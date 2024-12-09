@@ -1,5 +1,6 @@
 package cucumber.steps;
 
+import com.softway.diagnosis.domain.AutoDiagnosticSystem;
 import com.softway.diagnosis.domain.DiagnosticSystem;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -11,7 +12,7 @@ import org.junit.jupiter.api.Assertions;
  */
 public class DiagnosisStep {
 
-    DiagnosticSystem diagnosticSystem;
+    DiagnosticSystem diagnosticSystem = new AutoDiagnosticSystem();
 
     int healthIindex;
 
