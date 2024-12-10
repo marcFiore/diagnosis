@@ -2,11 +2,6 @@ Feature: Detection of a patient's pathology
   An automated self-diagnosis booth allows the patient to be informed of his or her pathology(s) using an index.
   Once this index has been interpreted, the patient will know which department to go to
 
-#  Scenario: Heart problem detection
-#    Given the sensor provides a health index like 33
-#    When the machine interprets the index as multiple of 3
-#    Then the screen should display "Cardiologie"
-
   Scenario Outline: Heart problem detection
     Given the sensor provides a <healthIndex>
     When the machine interprets the index as multiple of 3
